@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="XMLINOF">
+      <UniqueIdentifier>{b97a743c-6bad-4876-b7e1-1b1f1900de60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JSON">
+      <UniqueIdentifier>{2b0ff7da-7365-46d7-867f-5855b74f8b5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="计算书">
+      <UniqueIdentifier>{06d5e429-3551-4df6-a256-6ff0554078e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="计算书\0">
+      <UniqueIdentifier>{44f80a10-6f13-47f8-8aad-d118bf83e480}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="计算书\1">
+      <UniqueIdentifier>{b0dccdc7-c2f4-4dc3-9028-84ffee3beecb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="计算书\2">
+      <UniqueIdentifier>{25ef4ac7-1052-47bc-acdc-a80872eb45ac}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="megasectcal.def">
+      <Filter>源文件</Filter>
+    </None>
+    <None Include="res\megasectcal.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="megasectcal.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MegaCapacityCal.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EUROCode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AISC.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChineseCode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MegaCalIO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FibreMethod.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceCheck.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SectProperty.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GPara.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Force_combine.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MegaCalCmd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MegaCalInterface.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MegaDrawingImp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlInfo\InfoItem.cpp">
+      <Filter>XMLINOF</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlInfo\SlimXml.cpp">
+      <Filter>XMLINOF</Filter>
+    </ClCompile>
+    <ClCompile Include="jsoncpp.cpp">
+      <Filter>JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="CfgSvr.cpp">
+      <Filter>计算书\0</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigGen.cpp">
+      <Filter>计算书\0</Filter>
+    </ClCompile>
+    <ClCompile Include="GReport.cpp">
+      <Filter>计算书\0</Filter>
+    </ClCompile>
+    <ClCompile Include="Regkey.cpp">
+      <Filter>计算书\0</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceHeader_CPP.cpp">
+      <Filter>计算书\1</Filter>
+    </ClCompile>
+    <ClCompile Include="Pk_MainOutPut2.cpp">
+      <Filter>计算书\2</Filter>
+    </ClCompile>
+    <ClCompile Include="Pk_MainOutPut3.cpp">
+      <Filter>计算书\2</Filter>
+    </ClCompile>
+    <ClCompile Include="Pk_MainOutPut4.cpp">
+      <Filter>计算书\2</Filter>
+    </ClCompile>
+    <ClCompile Include="Pk_MainOutPut1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalResult.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Loaddef.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="megasectcal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stsSection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MegaLoads.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MegaResults.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MegaCapacityCal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EUROCode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AISC.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChineseCode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MegaCalIO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FibreMethod.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceCheck.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SectProperty.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StrucInput.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GPara.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MemberForce.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Force_combine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MegaCalCmd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MegaCalInterface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MegaDrawingImp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlInfo\InfoItem.h">
+      <Filter>XMLINOF</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlInfo\SlimXml.h">
+      <Filter>XMLINOF</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json.h">
+      <Filter>JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json-forwards.h">
+      <Filter>JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="CfgSvr.h">
+      <Filter>计算书\0</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigGen.h">
+      <Filter>计算书\0</Filter>
+    </ClInclude>
+    <ClInclude Include="GReport.h">
+      <Filter>计算书\0</Filter>
+    </ClInclude>
+    <ClInclude Include="ICalculationReport.h">
+      <Filter>计算书\0</Filter>
+    </ClInclude>
+    <ClInclude Include="IGenerateText.h">
+      <Filter>计算书\0</Filter>
+    </ClInclude>
+    <ClInclude Include="ParagraphMacroHeader.h">
+      <Filter>计算书\0</Filter>
+    </ClInclude>
+    <ClInclude Include="Regkey.h">
+      <Filter>计算书\0</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceHeader_CPP.h">
+      <Filter>计算书\1</Filter>
+    </ClInclude>
+    <ClInclude Include="Pk_MainOutPut.h">
+      <Filter>计算书\2</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalResult.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Loaddef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="megasectcal.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

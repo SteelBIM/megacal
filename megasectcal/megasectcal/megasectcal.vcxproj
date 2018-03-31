@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0B0C3108-F58E-44F4-88B0-5D2FAF354081}</ProjectGuid>
+    <RootNamespace>megasectcal</RootNamespace>
+    <Keyword>MFCDLLProj</Keyword>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)..\Depends\Inc\STS_Inc;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)..\WIN32_MAIN_2017_08_18</OutDir>
+    <TargetName>$(ProjectName)D</TargetName>
+    <LibraryPath>$(SolutionDir)..\Depends\Lib\STSLib\Win32;$(SolutionDir)..\WIN32_MAIN_2017_08_18;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)..\Depends\Inc\STS_Inc;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)..\WIN32_MAIN_2017_08_18</OutDir>
+    <LibraryPath>$(SolutionDir)..\Depends\Lib\STSLib\Win32;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;_MEGASECTCAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>.\megasectcal.def</ModuleDefinitionFile>
+      <AdditionalOptions>/verbose:lib %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>.\megasectcal.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="megasectcal.def" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\megasectcal.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AISC.cpp" />
+    <ClCompile Include="CfgSvr.cpp" />
+    <ClCompile Include="ChineseCode.cpp" />
+    <ClCompile Include="ConfigGen.cpp" />
+    <ClCompile Include="EUROCode.cpp" />
+    <ClCompile Include="FibreMethod.cpp" />
+    <ClCompile Include="Force_combine.cpp" />
+    <ClCompile Include="GlobalResult.cpp" />
+    <ClCompile Include="GPara.cpp" />
+    <ClCompile Include="GReport.cpp" />
+    <ClCompile Include="InterfaceCheck.cpp" />
+    <ClCompile Include="InterfaceHeader_CPP.cpp" />
+    <ClCompile Include="jsoncpp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Loaddef.cpp" />
+    <ClCompile Include="MegaCalCmd.cpp" />
+    <ClCompile Include="MegaCalInterface.cpp" />
+    <ClCompile Include="MegaCalIO.cpp" />
+    <ClCompile Include="MegaCapacityCal.cpp" />
+    <ClCompile Include="MegaDrawingImp.cpp" />
+    <ClCompile Include="megasectcal.cpp" />
+    <ClCompile Include="Pk_MainOutPut1.cpp" />
+    <ClCompile Include="Pk_MainOutPut2.cpp" />
+    <ClCompile Include="Pk_MainOutPut3.cpp" />
+    <ClCompile Include="Pk_MainOutPut4.cpp" />
+    <ClCompile Include="Regkey.cpp" />
+    <ClCompile Include="SectProperty.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Tools.cpp" />
+    <ClCompile Include="XmlInfo\InfoItem.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="XmlInfo\SlimXml.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AISC.h" />
+    <ClInclude Include="CfgSvr.h" />
+    <ClInclude Include="ChineseCode.h" />
+    <ClInclude Include="ConfigGen.h" />
+    <ClInclude Include="EUROCode.h" />
+    <ClInclude Include="FibreMethod.h" />
+    <ClInclude Include="Force_combine.h" />
+    <ClInclude Include="GlobalResult.h" />
+    <ClInclude Include="GPara.h" />
+    <ClInclude Include="GReport.h" />
+    <ClInclude Include="ICalculationReport.h" />
+    <ClInclude Include="IGenerateText.h" />
+    <ClInclude Include="InterfaceCheck.h" />
+    <ClInclude Include="InterfaceHeader_CPP.h" />
+    <ClInclude Include="json\json-forwards.h" />
+    <ClInclude Include="json\json.h" />
+    <ClInclude Include="Loaddef.h" />
+    <ClInclude Include="MegaCalCmd.h" />
+    <ClInclude Include="MegaCalInterface.h" />
+    <ClInclude Include="MegaCalIO.h" />
+    <ClInclude Include="MegaCapacityCal.h" />
+    <ClInclude Include="MegaDrawingImp.h" />
+    <ClInclude Include="MegaLoads.h" />
+    <ClInclude Include="MegaResults.h" />
+    <ClInclude Include="megasectcal.h" />
+    <ClInclude Include="MemberForce.h" />
+    <ClInclude Include="ParagraphMacroHeader.h" />
+    <ClInclude Include="Pk_MainOutPut.h" />
+    <ClInclude Include="Regkey.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SectProperty.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StrucInput.h" />
+    <ClInclude Include="stsSection.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Tools.h" />
+    <ClInclude Include="XmlInfo\InfoItem.h" />
+    <ClInclude Include="XmlInfo\SlimXml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="megasectcal.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="megasectcal.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
