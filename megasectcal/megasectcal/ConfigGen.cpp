@@ -821,7 +821,7 @@ void CConfigGenCalc::WriteToAllItems( slim::XmlNode *ndItems )
 				oneNode->addAttribute(type,text);
 				oneNode->addAttribute(key,STS_MEGA_RESISTANCE_OF_THE_CROSS_SECTION_TO_COMBINED_ACTIONS_M_N);
 				oneNode->addAttribute(checked,true);
-				oneNode->addAttribute(text,_T("Resistance of the cross-section to combined actions M-N(without buckling)"));
+				oneNode->addAttribute(text,_T("Resistance of the cross-section to combined actions M-N(without length effect)"));
 				oneNode->addAttribute(style,0);
 				oneNode->addAttribute(sel,1);
 			}

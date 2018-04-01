@@ -657,6 +657,16 @@ bool MegaCapacityCal::NMCurve_PDM_Nominal()
 	nm_point.y_N = 0;
 	NMPoints_y_nominal.Add(nm_point);
 
+	for(int i=0;i<4;i++){
+		float ks = LengthEffect(1);
+		nm_point.y_N = NMPoints_x_nominal[i].y_N*ks;
+		nm_point.x_M = NMPoints_x_nominal[i].x_M;
+		NMPoints_x_nominal_Length.Add(nm_point);
+		ks = LengthEffect(2);
+		nm_point.y_N = NMPoints_y_nominal[i].y_N*ks;
+		nm_point.x_M = NMPoints_y_nominal[i].x_M;
+		NMPoints_y_nominal_Length.Add(nm_point);
+	}
 	return true;
 
 }
@@ -1401,7 +1411,7 @@ void MegaCapacityCal::DrawPDMCurve(const int yz)
 	int selcurve = yz%10;		//存的时候，10位是y,z轴，个位是控制画曲线的上限
 	if(yz>10 && yz<20){
 		if(selcurve<2)
-			StrFile=_T("PDM_NM_y_design.t");
+			StrFile=_T("PDM_NM_y_design.t");		//Only one design curve
 //			StrFile.Format(_T("%s\\PDM_NM_y_design.t"),Dir);
 		else
 			StrFile=_T("PDM_NM_y.t");
@@ -1439,7 +1449,7 @@ void MegaCapacityCal::DrawPDMCurve(const int yz)
 	float  size_y=3000;
 	float  scale_x=1;
 	float  scale_y=1;
-	{
+	{	//先确定一下最大的绘图范围
 		for(int i=0;i<NMPoints_x_nominal.GetSize();i++)
 		{
 			float xtmp,ytmp;
@@ -1485,27 +1495,27 @@ void MegaCapacityCal::DrawPDMCurve(const int yz)
 	float ytl2=ytl1;
 	float xtl1=0.8*max_x;
 	float xtl2=xtl1+XM1*4;	
-	TxtLegends(xtl1, ytl1, xtl2, ytl2,XM1, YM1,_T("PDM-Curve"));
+	TxtLegends(xtl1, ytl1, xtl2, ytl2,XM1, YM1,_T("Nominal Strength,without lengtheffect"));
 
 	float temp_pt_x;
 	float temp_pt_y;
 	CString* temp_pt_info = new CString;
 	{
 		Points_info temp_info;
-		for(int i=0;i<NMPoints_x.GetSize()-1;i++)
+		for(int i=0;i<NMPoints_x_nominal.GetSize()-1;i++)
 		{
 			float x1,x2,y1,y2;
 			if(yz>10 && yz<20){
-				x1 = NMPoints_x[i].x_M;
-				x2 = NMPoints_x[i+1].x_M;
-				y1 = NMPoints_x[i].y_N;
-				y2 = NMPoints_x[i+1].y_N;
+				x1 = NMPoints_x_nominal[i].x_M;
+				x2 = NMPoints_x_nominal[i+1].x_M;
+				y1 = NMPoints_x_nominal[i].y_N;
+				y2 = NMPoints_x_nominal[i+1].y_N;
 			}
 			else{
-				x1 = NMPoints_y[i].x_M;
-				x2 = NMPoints_y[i+1].x_M;
-				y1 = NMPoints_y[i].y_N;
-				y2 = NMPoints_y[i+1].y_N;
+				x1 = NMPoints_y_nominal[i].x_M;
+				x2 = NMPoints_y_nominal[i+1].x_M;
+				y1 = NMPoints_y_nominal[i].y_N;
+				y2 = NMPoints_y_nominal[i+1].y_N;
 			}
 			
 			m_pCfgBas->Line(x1,y1,x2,y2);
@@ -1524,28 +1534,31 @@ void MegaCapacityCal::DrawPDMCurve(const int yz)
 			}	
 		}
 		if(selcurve==2)  	GPara::Pt_info.Add(temp_info);
+	}
+
 		yanse=4;
 		m_pCfgBas->Layers(cenghao,xianxing,xiankuan,yanse,fanhui);
 
 		ytl1=ytl1-1.5*YM1;
 		ytl2=ytl1;
-		TxtLegends(xtl1, ytl1, xtl2, ytl2,XM1, YM1,_T("PDM-Curve-nominal"));
+		if(selcurve==2){
+		TxtLegends(xtl1, ytl1, xtl2, ytl2,XM1, YM1,_T("Nominal Strength,with LengthEffect"));
 
 		Points_info temp_info_2;
-		for(int i=0;i<NMPoints_x_nominal.GetSize()-1;i++)
+		for(int i=0;i<NMPoints_x_nominal_Length.GetSize()-1;i++)
 		{
 			float x1,x2,y1,y2;
 			if(yz>10 && yz<20){
-				x1 = NMPoints_x_nominal[i].x_M;
-				x2 = NMPoints_x_nominal[i+1].x_M;
-				y1 = NMPoints_x_nominal[i].y_N;
-				y2 = NMPoints_x_nominal[i+1].y_N;
+				x1 = NMPoints_x_nominal_Length[i].x_M;
+				x2 = NMPoints_x_nominal_Length[i+1].x_M;
+				y1 = NMPoints_x_nominal_Length[i].y_N;
+				y2 = NMPoints_x_nominal_Length[i+1].y_N;
 			}
 			else{
-				x1 = NMPoints_y_nominal[i].x_M;
-				x2 = NMPoints_y_nominal[i+1].x_M;
-				y1 = NMPoints_y_nominal[i].y_N;
-				y2 = NMPoints_y_nominal[i+1].y_N;
+				x1 = NMPoints_y_nominal_Length[i].x_M;
+				x2 = NMPoints_y_nominal_Length[i+1].x_M;
+				y1 = NMPoints_y_nominal_Length[i].y_N;
+				y2 = NMPoints_y_nominal_Length[i+1].y_N;
 			}
 			m_pCfgBas->Line(x1,y1,x2,y2);
 			if(selcurve==2){
@@ -1563,15 +1576,15 @@ void MegaCapacityCal::DrawPDMCurve(const int yz)
 			}	
 		}
 		if(selcurve==2) 	GPara::Pt_info.Add(temp_info_2);
-
-		}
+	}
 	yanse=3;
 	m_pCfgBas->Layers(cenghao,xianxing,xiankuan,yanse,fanhui);
 	ytl1=ytl1-1.5*YM1;
 	ytl2=ytl1;
-	TxtLegends(xtl1, ytl1, xtl2, ytl2,XM1, YM1,_T("PDM-Curve-LengthEffect"));
+	if(selcurve==2){
+		TxtLegends(xtl1, ytl1, xtl2, ytl2,XM1, YM1,_T("Design Strength,with LengthEffect"));
 
-		if(selcurve==2){		//绘制长度效应折减曲线
+		//绘制长度效应折减曲线
 			Points_info temp_info_3;
 		for(int i=0;i<NMPoints_x_Length.GetSize()-1;i++)
 		{
